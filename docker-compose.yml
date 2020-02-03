@@ -8,14 +8,14 @@ services:
     volumes:
       - db-volume:/var/lib/mysql
     ports:
-      - "3300:3300"
+      - "3306:3306"
   web:
     build: .
     command: bundle exec rails s -p 3000 -b 0.0.0.0
     volumes:
       - .:/app
     ports:
-      - "3200:3200"
+      - "3000:3000"
     depends_on:
       - db
     volumes:
