@@ -1,0 +1,27 @@
+<div class="container">
+  <div class"row">
+    <div class="col-xs-12>
+      <p>User Sign Up</p>
+      <p>Please fill up blanks down below</p>
+      <p>to join in us !!</div>
+    </div>
+    <%= form_for(@user, {controller: 'users',action: 'new'} do |f| %>
+      <div class="">
+        <%= f.label :name, class:"" %>
+        <%= f.text_field :name, class:"" %>
+      </div>
+      <div class="">
+        <%= f.label :email, class:"" %>
+        <%= f.text_field :email, class:"" %>
+      </div>
+      <div class="">
+        <%= f.label :password, class:"" %>
+        <%= f.text_field :password, class:"" %>
+      </div>
+      <div class="">
+        <%= f.submit "Sign Up", class:"" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
