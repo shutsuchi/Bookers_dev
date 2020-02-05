@@ -18,11 +18,8 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    volumes:
-      - .:/app
     tty: true
     stdin_open: true
-    links:
-      - db
+ 
 volumes:
   db-volume:
