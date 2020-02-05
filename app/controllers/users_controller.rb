@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      redirect_to user_path(@user)
+      redirect_to @user
     else
       render :new
     end
@@ -30,17 +30,12 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to user_path(@user)
+      redirect_to @user
     else
-      render edit_user_path(@user)
+      render :edit
     end
   end
 
-  def destry
-    user = user.find(params[:id])
-    user.destroy
-    #redirect_to
-  end
 
   Protected
     def configure_permitted_parameters
@@ -53,6 +48,6 @@ class UsersController < ApplicationController
 
     def correct_user
       @user = User.find(params[:id])
-      redirect_to rrot_url unless current_user?(@user)
+      redirect_to root_url unless current_user?(@user)
     end
 end

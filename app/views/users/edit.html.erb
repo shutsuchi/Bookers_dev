@@ -1,2 +1,24 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <h1>Your Account Info</h1>
+    <p></p>
+    <%= form_for(@user) do |f| %>
+
+      <table border="1">
+        <tr>
+          <th><%= f.label :name, 'Name' %></th>
+          <td><%= f.text_filed :name %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :email, 'Email' %></th>
+          <td><%= f.text_filed :email %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :password, 'Passoword' %></th>
+          <td><%= f.password_filed :password %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :password_confirmation, 'Password Again' %></th>
+          <td><%= f.text_filed :password_confirmation %></td>
+        </tr>
+      </table>

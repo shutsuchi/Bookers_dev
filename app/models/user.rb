@@ -8,6 +8,6 @@ class User < ApplicationRecord
   end
 
   def self.encrypt(token)
-    Digest::SH1.hexdigest(token.to_s)
+    Digest::SHA1.hexdigest(token.to_s)
   end
 end

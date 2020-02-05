@@ -5,21 +5,25 @@
       <p>Please fill up blanks down below</p>
       <p>to join in us !!</div>
     </div>
-    <%= form_for(@user, {controller: 'users',action: 'new'} do |f| %>
+    <%= form_for(@user, {controller: 'users',action: 'new'}) do |f| %>
       <div class="">
-        <%= f.label :name, class:"" %>
+        <%= f.label :name, 'Name', class:"" %>
         <%= f.text_field :name, class:"" %>
       </div>
       <div class="">
-        <%= f.label :email, class:"" %>
+        <%= f.label :email, 'Email', class:"" %>
         <%= f.text_field :email, class:"" %>
       </div>
       <div class="">
-        <%= f.label :password, class:"" %>
-        <%= f.text_field :password, class:"" %>
+        <%= f.label :password, 'Password', class:"" %>
+        <%= f.password_field :password, class:"" %>
       </div>
       <div class="">
-        <%= f.submit "Sign Up", class:"" %>
+        <%= f.label :password_confirmation, 'Password again', class:"" %>
+        <%= f.password_field :password_confirmation, class:"" %>
+      </div>
+      <div class="">
+        <%= f.submit "Create Account", class:"" %>
       </div>
     <% end %>
   </div>

@@ -4,5 +4,16 @@
     <div class="">
       <h2>What are you gonna do today...</h2>
     </div>
+    <div class="">
+      <div class="">Your Name</div>
+      <%= @user.name %>
+    </div>
+    <div class="">
+      <div class="">Your Email-Address</div>
+      <%= @user.email %>
+    </div>
+    <% if current_user?(@user) %>
+    <p><%= link_to '編集', edit_user_path %></p>
+    <% end %>
   </div>
 </div>
