@@ -29,6 +29,6 @@ module SessionsHelper
   end
 
   def signed_in_user
-    redirect_to signin_url unless signed_in
+    redirect_to users_path unless current_user
   end
 end

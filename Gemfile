@@ -38,6 +38,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'pry-rails'  # rails console(もしくは、rails c)でirbの代わりにpryを使われる
+  gem 'pry-doc'    # methodを表示
+  gem 'pry-byebug' # デバッグを実施(Ruby 2.0以降で動作する)
+  gem 'pry-stack_explorer' # スタックをたどれる
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
@@ -60,3 +64,16 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# For Paging Func
+gem 'kaminari','~> 1.1.1'
+
+### Refile
+# For File UPload
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+# For Resize Image Uploaded
+gem "refile-mini_magick"
+
+#### Bootstrap
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'jquery-rails'

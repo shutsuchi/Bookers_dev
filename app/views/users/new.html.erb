@@ -1,11 +1,11 @@
 <div class="container">
-  <div class"row">
-    <div class="col-xs-12>
+  <div class="row">
+    <div class="col-xs-12">
       <p>User Sign Up</p>
       <p>Please fill up blanks down below</p>
       <p>to join in us !!</div>
     </div>
-    <%= form_for(@user, {controller: 'users',action: 'new'}) do |f| %>
+    <%= form_for(@user,{controller: 'users', action: 'new'}) do |f| %>
       <div class="">
         <%= f.label :name, 'Name', class:"" %>
         <%= f.text_field :name, class:"" %>
@@ -28,4 +28,3 @@
     <% end %>
   </div>
 </div>
-
