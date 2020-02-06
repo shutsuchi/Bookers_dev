@@ -1,4 +1,4 @@
-module SessionHelper
+module SessionsHelper
   def sign_in(user)
     remember_token = User.new_remember_token
     cookies.permanent[:remember_token] = remember_token
@@ -24,11 +24,11 @@ module SessionHelper
     user == current_user
   end
 
-  def signed_in?(user)
+  def signed_in?
     !current_user.nil?
   end
 
   def signed_in_user
-    redirect_to signin_url unless signed_in
+    redirect_to users_path unless current_user
   end
 end

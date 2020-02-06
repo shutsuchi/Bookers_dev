@@ -22,28 +22,30 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       sign_in @user
-      redirect_to @user
+      redirect_to @user,
+        notice: 'Welcome (@user.name}!!'
     else
-      render :new
+      render :index
     end
   end
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to @user
+      redirect_to @user,
+      notice: 'Updated your infomation !!'
     else
       render :edit
     end
   end
 
 
-  Protected
+  protected
     def configure_permitted_parameters
     end
 
   private
     def user_params
-      params.require(:user).permit(:name, :email, :introduction, :profile_image, :password, :password_confirmation)
+      params.require(:user).permit(:name, :email, :introduction, :profile_image, :password, :password_confirmation, :remember_token)
     end
 
     def correct_user

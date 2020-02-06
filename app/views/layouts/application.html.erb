@@ -5,22 +5,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
     <div class="container">
       <div class="row">
-        <div>
+        <div class="col-xs-12">
           <ul>
-            <li><%= link_to 'ユーザ一覧', users_path %></li>
+            <li><%= link_to 'User List', users_path %></li>
             <% if signed_in? %>
-            <li><%= link_to 'プロフィール', current_user %></li>
-            <li><%= link_to 'ログアウト', signout_path, method: :delete %></li>
+            <li><%= link_to 'Profile', current_user %></li>
+            <li><%= link_to 'Logout', signout_path, method: :delete %></li>
             <% else %>
-            <li><%= link_to 'ログイン', signin_path %></li>
-            <li><%= link_to 'アカウント作成', signup_path %></li>
+            <li><%= link_to 'Login', signin_path %></li>
+            <li><%= link_to 'Sign up', signup_path %></li>
             <% end %>
           </ul>
         </div>
