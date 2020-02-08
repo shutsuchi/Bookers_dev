@@ -1,9 +1,16 @@
 <div class="container">
   <div class="row">
-    <h1>Users#index</h1>
-    <p>Find me in app/views/users/index.html.erb</p>
-    <ul>
-      <% @users.each do |user| %>
-      <li> <%= link_to user.name, user %></li>
-      <% end %>
-    </ul>
+    <%= render 'layouts/common_sidebar', user: current_user, book: @book %>
+    <div class="col-xs-9">
+
+      <h2>Users List</h2>
+      <p></p>
+      <ul>
+        <% @users.each do |user| %>
+        <li> <%= link_to user.name, user %></li>
+        <% end %>
+      </ul>
+
+    </div>
+  </div>
+</div>
