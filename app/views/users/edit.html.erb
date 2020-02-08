@@ -2,8 +2,8 @@
   <div class="row">
     <h1>Your Account Info</h1>
     <p></p>
-    <%= form_for(@user) do |f| %>
 
+    <%= form_for(@user) do |f| %>
       <table border="1">
         <tr>
           <th><%= f.label :name, 'Name' %></th>
@@ -21,8 +21,11 @@
           <th><%= f.label :password_confirmation, 'Password Again' %></th>
           <td><%= f.text_field :password_confirmation %></td>
         </tr>
-        <tr>
-          <th><%= f.submit 'Update' %></th>
-        </tr>
       </table>
+      <div class="">
+        <%= f.submit 'Update', class:"btn btn-primary" %>
+      </div>
     <% end %>
+
+  </div>
+</div>
