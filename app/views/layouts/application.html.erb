@@ -11,12 +11,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <header class="navbar nabvar-fixd-top navbar-inverse">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <ul>
+          <nav>
+          <ul class="nav navbar-nav navbar-right">
             <li><%= link_to 'User List', users_path %></li>
+            <li><%= link_to 'Book List', books_index_path %></li>
             <% if signed_in? %>
             <li><%= link_to 'Profile', current_user %></li>
             <li><%= link_to 'Logout', signout_path, method: :delete %></li>
@@ -25,12 +27,14 @@
             <li><%= link_to 'Sign up', signup_path %></li>
             <% end %>
           </ul>
+          </nav>
         </div>
       </div>
     </div>
 
     <hr />
-
+  </header>
+  <body>
     <%= yield %>
   </body>
 </html>
