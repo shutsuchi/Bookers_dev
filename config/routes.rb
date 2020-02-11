@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  get 'books/edit'
-  get 'books/show'
-  get 'books/index'
+  resources :books, only: [:index, :show, :edit, :create, :update, :destroy]
   resources :users, only: [:index, :show, :new, :edit, :create, :update]
   resources :sessions, only: [:new, :create, :destroy]
   root to: 'home#top'

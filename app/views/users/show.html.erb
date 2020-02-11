@@ -1,20 +1,27 @@
 <div class="container">
   <div class="row">
-    <div class="">
-    <h1>Welcome to Bookers <%= @user.name %> !!</h1>
-    <div class="">
-      <h2>What are you gonna do today...</h2>
+    <%= render 'layouts/common_sidebar', user: current_user, book: @book %>_
+    <div class="col-xs-9">
+      <div class="">
+      <h2>Welcome to Bookers <%= @user.name %> !!</h2>
+      </div>
+      <div class="">
+        <h4>Infomation about you is down below</h4>
+      </div>
+      <table>
+        <tr>
+          <th>Your Name</th>
+          <td><%= @user.name %></td>
+        </tr>
+        <tr>
+          <th>Your Email-Address</th>
+          <td><%= @user.email %></td>
+        </tr>
+      </table>
+
+      <% if current_user?(@user) %>
+      <p><%= link_to 'Edit', edit_user_path, class:"btn btn-primary field" %></p>
+      <% end %>
     </div>
-    <div class="">
-      <div class="">Your Name</div>
-      <%= @user.name %>
-    </div>
-    <div class="">
-      <div class="">Your Email-Address</div>
-      <%= @user.email %>
-    </div>
-    <% if current_user?(@user) %>
-    <p><%= link_to '編集', edit_user_path %></p>
-    <% end %>
   </div>
 </div>
